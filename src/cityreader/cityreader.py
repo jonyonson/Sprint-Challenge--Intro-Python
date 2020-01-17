@@ -104,15 +104,19 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
     return within
 
 
-point1 = list(map(float, input("Enter lat1,lon1: ").split(",")))
-point2 = list(map(float, input("Enter lat2,lon2: ").split(",")))
+# only run if launched directly
+# allows tests to run without asking for input
+if __name__ == "__main__":
 
-lat1 = point1[0]
-lon1 = point1[1]
-lat2 = point2[0]
-lon2 = point2[1]
+    point1 = list(map(float, input("Enter lat1,lon1: ").split(",")))
+    point2 = list(map(float, input("Enter lat2,lon2: ").split(",")))
 
-within = cityreader_stretch(lat1, lon1, lat2, lon2, cities)
+    lat1 = point1[0]
+    lon1 = point1[1]
+    lat2 = point2[0]
+    lon2 = point2[1]
 
-for city in within:
-    print(city)
+    within = cityreader_stretch(lat1, lon1, lat2, lon2, cities)
+
+    for city in within:
+        print(city)
